@@ -14,6 +14,6 @@ router.get("/:id", taskController.getTaskController);
 
 router.delete("/:id", taskController.deleteTaskController);
 
-router.get("/:id", taskController.getDoneTasks);
+router.get("/done", taskController.getDoneTasks);
 
 export default router;

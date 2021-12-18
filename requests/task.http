@@ -6,8 +6,8 @@ POST http://localhost:5000/api/tasks
 Content-Type: application/json
 
 {
-  "title": "count numbers",
-  "description": "1, 2, 3",
+  "title": "swim in the pool",
+  "description": "take a dip and enjoy the water",
   "done": true
 }
 
@@ -18,4 +18,4 @@ GET http://localhost:5000/api/tasks/61b8986e4dd3a20c3a6c302b
 DELETE http://localhost:5000/api/tasks/61b8986e4dd3a20c3a6c302b
 
 ###
-GET http://localhost:5000/api/tasks/61b89a2126dd91abe2e7b33f
+GET http://localhost:5000/api/tasks/done

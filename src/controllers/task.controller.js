@@ -30,4 +30,5 @@ export const deleteTaskController = async (req, res) => {
 
 export const getDoneTasks = async (req, res) => {
   console.log(req.params.id);
+  Task.find({ done: true });
 };

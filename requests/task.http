@@ -1,5 +1,5 @@
 ###
-GET http://localhost:5000/api/tasks
+GET http://localhost:5000/api/tasks?size=1&title=mango
 
 ###
 POST http://localhost:5000/api/tasks

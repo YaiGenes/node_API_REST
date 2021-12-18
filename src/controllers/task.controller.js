@@ -1,12 +1,18 @@
-import res from "express/lib/response";
 import { getPagination } from "../libs/getPagination.js";
 import Task from "../models/Task.js";
 
 export const getTasksController = async (req, res) => {
   try {
-    const { size, page } = req.query;
+    const { size, page, title } = req.query;
+
+    const titleSearch = title
+      ? {
+          title: { $regex: new RegExp(title), $options: "i" },
+        }
+      : {};
+
     const { limit, offset } = getPagination(page, size);
-    const tasks = await Task.paginate({}, { offset, limit });
+    const tasks = await Task.paginate(titleSearch, { offset, limit });
     res.json(tasks);
   } catch (error) {
     res.status(500).json({ message: error.message });

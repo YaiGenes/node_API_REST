@@ -1,23 +1,25 @@
 import express from "express";
-import TasksRoutes from "./routes/tasks.routes.js";
 import morgan from "morgan";
 import cors from "cors";
 import config from "./config/config.js";
+import TasksRoutes from "./routes/tasks.routes.js";
 
 //app is for server settings
 
 const app = express();
 
-//settings
+//SETTINGS
 app.set("port", config.port || 3000);
 
-//middlewares
+//MIDDLEWARES
 app.use(morgan("dev"));
 app.use(express.json());
+//for html form req
 app.use(express.urlencoded({ extended: false }));
+//to allow any other user to access this server
 app.use(cors());
 
-//routes
+//ROUTES
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to my application" });
 });

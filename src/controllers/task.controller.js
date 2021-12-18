@@ -1,10 +1,13 @@
 import res from "express/lib/response";
+import { getPagination } from "../libs/getPagination.js";
 import Task from "../models/Task.js";
 
 export const getTasksController = async (req, res) => {
   try {
-    const tasks = await Task.find();
-    res.send(tasks);
+    const { size, page } = req.query;
+    const { limit, offset } = getPagination(page, size);
+    const tasks = await Task.paginate({}, { offset, limit });
+    res.json(tasks);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

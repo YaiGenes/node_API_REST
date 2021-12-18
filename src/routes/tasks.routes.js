@@ -10,10 +10,10 @@ router.get("/", taskController.getTasksController);
 
 router.post("/", taskController.postTaskController);
 
+router.get("/done", taskController.getDoneTasks);
+
 router.get("/:id", taskController.getTaskController);
 
 router.delete("/:id", taskController.deleteTaskController);
-
-router.get("/done", taskController.getDoneTasks);
 
 export default router;

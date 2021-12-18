@@ -34,12 +34,10 @@ export const getDoneTasks = async (req, res) => {
 };
 
 export const updateTasks = async (req, res) => {
-  console.log(req.params.id);
-  console.log(req.body);
-  // try {
-  //   const updateTask = await Task.findByIdAndUpdate(req.params.id, req.body);
-  //   res.json({ message: "task updated succefully" });
-  // } catch (error) {
-  //   res.json({ message: error.getMessage() });
-  // }
+  try {
+    const updateTask = await Task.findByIdAndUpdate(req.params.id, req.body);
+    res.json({ message: ` ${updateTask.title} task was updated succefully` });
+  } catch (error) {
+    res.json({ message: error.getMessage() });
+  }
 };

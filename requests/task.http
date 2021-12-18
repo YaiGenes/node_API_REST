@@ -25,5 +25,5 @@ PUT http://localhost:5000/api/tasks/61b89a2126dd91abe2e7b33f
 Content-Type: application/json
 
 {
-  "description": "like a frog in the water"
+  "description": "like a frog in the pond"
 }

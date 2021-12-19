@@ -21,7 +21,7 @@ app.use(cors());
 
 //ROUTES
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to my API" });
+  res.json({ message: "Welcome to my GenesAPI" });
 });
 
 app.use("/api/tasks", TasksRoutes);

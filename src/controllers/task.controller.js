@@ -10,10 +10,14 @@ export const getTasksController = async (req, res) => {
           title: { $regex: new RegExp(title), $options: "i" },
         }
       : {};
-
     const { limit, offset } = getPagination(page, size);
-    const tasks = await Task.paginate(titleSearch, { offset, limit });
-    res.json(tasks);
+    const data = await Task.paginate(titleSearch, { offset, limit });
+    res.json({
+      totalItems: data.totalDocs,
+      tasks: data.docs,
+      totalPages: data.totalPages,
+      currentPage: data.page - 1,
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

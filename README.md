@@ -9,12 +9,6 @@ CRUD REST-API with Nodejs, Express and MongoDB deployed using Clouding.io, nginx
 
 ## Deployment dom: https://yaigenes.cat
 
-<hr/>
-
-## Repo: https://github.com/YaiGenes/node_API_REST.git
-
-<hr/>
-
 ## API-CRUD Documentation
 <p>
 We can test and interact with the API any POSTMAN type app or with VS code pluggins like ThunderClient or REST_Server. 

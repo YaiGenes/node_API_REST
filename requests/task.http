@@ -6,16 +6,15 @@ POST https://yaigenes.cat/api/tasks
 Content-Type: application/json
 
 {
-  "title": "my love flavita",
-  "description": "I love my baby",
-  "done": true
+  "title": "test2",
+  "description": "this is the test2"
 }
 
 ###
 GET http://localhost:5000/api/tasks/61b8986e4dd3a20c3a6c302b
 
 ###
-DELETE https://yaigenes.cat/api/tasks/61bf9288e64a106963d0c50f
+DELETE https://yaigenes.cat/api/tasks/61bf9703e64a106963d0c517
 
 ###
 GET http://localhost:5000/api/tasks/done
